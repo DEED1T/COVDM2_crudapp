@@ -32,6 +32,6 @@ var schemaCenters = new mongoose.Schema({
     restricted : Boolean
 });
 
-const CentersDB = mongoose.model('centersDB', schemaCenters);
+const centersDB = mongoose.model('centersDB', schemaCenters);
 
-module.exports = CentersDB;
+module.exports = centersDB;

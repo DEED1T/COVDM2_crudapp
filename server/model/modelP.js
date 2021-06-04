@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
 var schemaPatients = new mongoose.Schema({
-    vaccinated : Boolean,
-    sick : Boolean,
-    dead : Boolean,
-    center : Number,
-    v_date : Date,
-    age : Number,
+    id : Number,
+    stats : Array
 
 });
 
-const patientsDB = mongoose.model('patientsDB', schemaPatients);
+const PatientsDB = mongoose.model('patients', schemaPatients);
 
-module.exports = patientsDB;
+module.exports = PatientsDB;

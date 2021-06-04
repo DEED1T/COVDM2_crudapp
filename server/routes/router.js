@@ -10,6 +10,6 @@ const controller = require('../controller/controller');
 route.get('/', services.homeRoutes);
 
 // API
-
+route.get('/getCenters', services.centersRoutes);
 
 module.exports = route;

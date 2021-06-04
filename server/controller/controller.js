@@ -1,3 +1,3 @@
-const patientsDB = require('../model/modelP');
-const centersDB = require('../model/modelC');
+const PatientsDB = require('../model/modelP');
+const CentersDB = require('../model/modelC');
 

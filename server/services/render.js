@@ -3,24 +3,24 @@ const PatientsDB = require('../model/modelC');
 const dotenv = require('dotenv');
 
 // client
-exports.homeRoutes = (req,res) => {
+exports.homeRoute = (req,res) => {
     res.render('home');
 };
 
-exports.moreRoutes = (req,res) => {
+exports.moreRoute = (req,res) => {
     res.render('more');
 };
 
-exports.rdvRoutes = (req,res) => {
+exports.rdvRoute = (req,res) => {
     res.render('rdv');
 };
 
-exports.aboutRoutes = (req,res) => {
+exports.aboutRoute = (req,res) => {
     res.render('about');
 };
 
 // API
-exports.centersRoutes = (req,res) => {
+exports.centersRoute = (req,res) => {
 
     CentersDB.find({}, function(err, docs) {
         try{

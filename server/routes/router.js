@@ -5,15 +5,15 @@ const services = require('../services/render');
 const controller = require('../controller/controller');
 
 // client routes
-route.get('/', services.homeRoutes);
+route.get('/', services.homeRoute);
 
-route.get('/more', services.moreRoutes);
+route.get('/more', services.moreRoute);
 
-route.get("/rdv", services.rdvRoutes);
+route.get("/rdv", services.rdvRoute);
 
-route.get("/about", services.aboutRoutes);
+route.get("/about", services.aboutRoute);
 
 // API
-route.get('/getCenters', services.centersRoutes);
+route.get('/getCenters', services.centersRoute);
 
 module.exports = route;

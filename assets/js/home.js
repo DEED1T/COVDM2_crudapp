@@ -1,4 +1,6 @@
 var map = L.map('map').setView([47, 2], 6);
+var markers = L.markerClusterGroup();
+
 
 $( document ).ready(function() {
     console.log("ready");
@@ -8,8 +10,8 @@ $( document ).ready(function() {
         url : 'getCenters',
         dataType: 'json',
         success: function(data) {
-            console.log("success")
             console.log(data);
+            addCenters(data.docs);
         },
         failure: function(data){
             alert('Cannot get DATA due to an error');
@@ -17,7 +19,40 @@ $( document ).ready(function() {
     });
 });
 
+var regions_centers = {};
+function addCenters(centers) {
 
+    for (var i = 1; i < centers.length; i++) {
+        if (centers[i].latitude != null) {
+            var marker = L.marker([centers[i].latitude, centers[i].longitude]);
+            markers.addLayer(marker);
+            let popup = `   <div class="card">
+            <div class="card-header">
+                <h2>
+              ${centers[i].rs}
+                </h2>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"> ${centers[i].adresse} </h3>
+              <p class="card-text"> ${centers[i].tel_rdv}</p>
+              <a href="/more" class="btn btn-secondary"> Plus d'informations </a>
+              <a href="/rdv" class="btn btn-secondary">Prendre RDV </a>
+            </div>
+          </div>
+
+            `;
+            //marker.bindPopup("<h2>" + centers[i].rs + "</h2>" + "<h3>" + centers[i].adresse + "</h3><h3>" + centers[i].tel_rdv + "</h3>");
+            marker.bindPopup(popup);
+        }
+
+        if (centers[i].region != null) {
+            regions_centers[i] = centers[i].region;
+            
+        }
+    }
+
+    map.addLayer(markers);
+}
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

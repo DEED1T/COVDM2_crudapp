@@ -2,7 +2,7 @@
 
 :root {
     --black: #202020;
-    --black-medium: #696969;
+    --black-medium: #4b4b4b;
     --white: #e0e0e0;
     --grey: #707070;
     --red: #f14b4d;
@@ -14,6 +14,7 @@ body {
 }
 
 h1 {
+    margin-top: 25px;
     color: black;
     font-family: "Poiret One" !important;
     font-size: 30px;
@@ -21,6 +22,7 @@ h1 {
 }
 
 h2 {
+    margin-top: 25px;
     color: var(--grey);
     font-family: "Helvetica" !important;
     font-size: 18px !important;
@@ -28,6 +30,8 @@ h2 {
 }
 
 h3 {
+    margin-top: 25px;
+
     color: var(--grey);
     font-family: "Helvetica" !important;
     font-size: 12px !important;
@@ -41,6 +45,18 @@ p {
     text-align: center;
 }
 
+.input-form {
+    color: var(--black-medium);
+    font-family: "Poiret One" !important;
+    font-size: 18px !important;
+    text-align: center;
+}
+
+.formholder:placeholder-shown {
+    font-family: "Helvetica" !important;
+    color: #cccccc;
+}
+
 .content {
     display: flex;
     flex-direction: row;
@@ -51,6 +67,7 @@ p {
 .nav {
     background-color: lightblue;
     overflow: hidden;
+    transition: all 0.5s;
 }
 
 .nav a {
@@ -84,6 +101,55 @@ p {
     border: 2px solid grey;
 }
 
+a:hover {
+    color : lightcoral;
+}
+
+.popup {
+    display: inline-block;
+    align-self: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    border: 4px #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 12px;
+    width: 150px;
+    height: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 60px;
+}
+
+.button {
+    display: inline-block;
+    background-color: lightblue;
+    border-radius: 10px;
+    border: 4px #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 20px;
+    width: 240px;
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+    
+    .button:hover {
+    background-color: lightcoral;
+    }
+
+#espace {
+    margin: 10px;
+}
+
+#rdv {
+    border: 2px solid grey;
+    margin: 50px;
+}
+
 #map {
     float: left;
     width: 940px;
@@ -104,7 +170,7 @@ p {
 }
 
 #left {
-    margin-top: 50px;
+    margin: 50px;
     width: 45%;
 }
 

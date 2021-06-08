@@ -35,8 +35,8 @@ function addCenters(centers) {
             <div class="card-body">
               <h3 class="card-title"> ${centers[i].adresse} </h3>
               <p class="card-text"> ${centers[i].tel_rdv}</p>
-              <a href="/more" class="btn btn-secondary"> Plus d'informations </a>
-              <a href="/rdv" class="btn btn-secondary">Prendre RDV </a>
+              <a href="/more" class="popup"> Plus d'informations </a>
+              <a href="/rdv" class="popup">Prendre RDV </a>
             </div>
           </div>
 

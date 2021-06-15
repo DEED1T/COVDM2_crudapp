@@ -13,6 +13,19 @@ body {
     margin: 0;
 }
 
+h4 {
+    margin-top: 18px;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    color: black;
+    font-family: "Poiret One" !important;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5px;
+}
+
 h1 {
     margin-top: 25px;
     color: black;
@@ -101,6 +114,33 @@ p {
     border: 2px solid grey;
 }
 
+.control-about-right {
+    float: right;
+    width: 940px;
+    height: 800px;
+    margin-right: 10px;
+    border: 2px solid grey;
+}
+
+.control-about {
+    float: right;
+    width: 940px;
+    height: 250px;
+    position: absolute;
+    right: 25%;
+    left:25%;
+    border: 2px solid grey;
+
+}
+
+.control-about-left {
+    float: left;
+    width: 940px;
+    height: 800px;
+    margin-left: 10px;
+    border: 2px solid grey;
+}
+
 a:hover {
     color : lightcoral;
 }
@@ -155,6 +195,11 @@ a:hover {
     width: 940px;
     height: 860px;
     border: 2px solid grey;
+}
+
+#pie {
+    margin-left: 75px;
+    width: 800px;
 }
 
 #title {

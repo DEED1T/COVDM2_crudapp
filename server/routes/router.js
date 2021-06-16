@@ -15,5 +15,6 @@ route.get("/about", services.aboutRoute);
 
 // API
 route.get('/getCenters', services.centersRoute);
+route.post('/api/rdv', controller.create)
 
 module.exports = route;

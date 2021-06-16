@@ -6,14 +6,12 @@ var icon = L.icon({
 });
 
 $( document ).ready(function() {
-    console.log("ready");
 
     $.ajax({
         method : 'GET',
         url : 'getCenters',
         dataType: 'json',
         success: function(data) {
-            console.log(data);
             addCenters(data.docs);
         },
         failure: function(data){

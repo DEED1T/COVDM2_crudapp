@@ -1,0 +1,58 @@
+<!-- include header -->
+<%-include('include/_header')%>
+<!-- /include header-->
+
+
+<h1>Rendez-vous pour dépistage COVID</h1>
+<div id="rdv">
+    <div id="espace">
+        <form action="/api/rdv" method="POST" class="row g-3" id="add-rdv">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="input-form">Nom</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputEmail4" class="input-form">Prénom</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress2" class="input-form">Email (Pour l'envoi des résultats)</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            
+            <div class="col-md-4">
+                <label for="inputState" class="input-form">Motif</label>
+                <select id="age" class="form-select">
+                    <option selected>Motif</option>
+                    <option>Malade</option>
+                    <option>Cas contact</option>
+                    <option>Voyage extra-muros</option>
+                    <option>Autre</option>
+
+                </select>
+            </div>
+            
+            <div>
+                <label for="appt" class="input-form">Horaire du test</label>
+
+            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+            <label for="appt" class="input-form">ouvert entre 9h et 18h</label>
+        </div>
+            
+            
+            <div class="col-12">
+                <button type="submit" class="button">Envoyer une demande</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="js/rdvT.js"></script>
+
+</html>

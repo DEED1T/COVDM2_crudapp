@@ -9,7 +9,9 @@ route.get('/', services.homeRoute);
 
 route.get('/more', services.moreRoute);
 
-route.get("/rdv", services.rdvRoute);
+route.get("/rdvV", services.rdvVRoute);
+
+route.get("/rdvT", services.rdvTRoute);
 
 route.get("/about", services.aboutRoute);
 

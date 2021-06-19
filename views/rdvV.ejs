@@ -3,38 +3,45 @@
 <!-- /include header-->
 
 
-<h1>Prendre Rendez-vous</h1>
+<h1>Rendez-vous pour Vaccination</h1>
 <div id="rdv">
     <div id="espace">
         <form action="/api/rdv" method="POST" class="row g-3" id="add-rdv">
             <div class="col-md-6">
                 <label for="inputEmail4" class="input-form">Nom</label>
-                <input type="text" class="form-control" id="inputEmail4">
+                <input type="text" class="form-control" id="name">
             </div>
             
             <div class="col-md-6">
                 <label for="inputPassword4" class="input-form">Prénom</label>
-                <input type="text" class="form-control" id="inputPassword4">
+                <input type="text" class="form-control" id="firstname">
             </div>
             
             <div class="col-12">
                 <label for="inputAddress" class="input-form">Addresse</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="">
+                <input type="text" class="form-control" id="address" placeholder="">
             </div>
             
             <div class="col-12">
                 <label for="inputAddress2" class="input-form">Email</label>
-                <input type="email" class="form-control" id="inputAddress2">
+                <input type="email" class="form-control" id="email">
             </div>
             
             <div class="col-md-6">
                 <label for="inputCity" class="input-form">Ville</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="city">
             </div>
+
+            <div class="col-md-6">
+                <label for="inputCity" class="input-form">Commorbidités</label>
+                <input type="text" class="form-control" id="city" placeholder="Si aucune : ne rien écrire">
+            </div>
+
+            
             
             <div class="col-md-4">
                 <label for="inputState" class="input-form">Age</label>
-                <select id="inputState" class="form-select">
+                <select id="age" class="form-select">
                     <option selected>Choix</option>
                     <option>18</option>
                     <option>19</option>
@@ -112,6 +119,11 @@
                 </select>
             </div>
             
+            <div class="form-group">
+                <label for="exampleFormControlFile1" class="input-form">Pour les personnes prioritaires : Certificat -> </label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+
             <div class="col-12">
             
                 <div class="form-check">
@@ -132,6 +144,6 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="js/rdv.js"></script>
+<script type="text/javascript" src="js/rdvV.js"></script>
 
 </html>

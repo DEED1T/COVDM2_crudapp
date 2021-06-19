@@ -11,8 +11,12 @@ exports.moreRoute = (req,res) => {
     res.render('more');
 };
 
-exports.rdvRoute = (req,res) => {
-    res.render('rdv');
+exports.rdvVRoute = (req,res) => {
+    res.render('rdvV');
+};
+
+exports.rdvTRoute = (req,res) => {
+    res.render('rdvT');
 };
 
 exports.aboutRoute = (req,res) => {

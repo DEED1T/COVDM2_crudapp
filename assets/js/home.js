@@ -36,8 +36,10 @@ function addCenters(centers) {
             <div class="card-body">
               <h3 class="card-title"> ${centers[i].adresse} </h3>
               <p class="card-text"> ${centers[i].tel_rdv}</p>
-              <a href="/more" class="popup"> Plus d'informations </a>
-              <a href="/rdv" class="popup">Prendre RDV </a>
+              <p> Prendre RDV pour : <p>
+              <a href="/rdvV" class="popup"> Vaccination </a>
+              <a href="/rdvT" class="popup"> Test COVID </a>
+
             </div>
           </div>
 
@@ -67,6 +69,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoid2h5c2lnbnVwIiwiYSI6ImNra3drcnl0aDR0a2IydnF0bnpxaHZ6MHkifQ.DaHm2wRVOQo7fXz7yLC2KA'
 }).addTo(map);
+
+
 
 function style(feature) {
     //var region = feature.properties['code'];
@@ -113,13 +117,45 @@ function onEachFeature(feature, layer) {
     });
 }
 
+//Button Control Panel
+function myRegion(){
+    chartGeo.options.plugins.title.text = 'Statistiques de la Région Occitanie';
+    chartGeo.data.datasets[0].data = stats_per_region["76"];
+    chartGeo.update()
+
+}
+
+function nat(){
+    chartGeo.options.plugins.title.text = 'Statistiques Nationales';
+    chartGeo.data.datasets[0].data = stats_nat;
+    chartGeo.update()
+
+}
+
 //CHART
+
+stats_nat = [5706378,16470369,105631]
+stats_per_region = {    "84" : [4707,10791,573],
+                        "32" : [3063,8336,368],
+                        "93" : [5597,10062,738],
+                        "44" : [4058,8516,475],
+                        "76" : [3347,8713,384],
+                        "28" : [2107,4383,290],
+                        "75" : [3348,9717,485],
+                        "24" : [1146,3529,168],
+                        "27" : [1483,1710,191],
+                        "53" : [1479,2793,195],
+                        "94" : [182,214,17],
+                        "52" : [1646,5476,231],
+                        "11" : [7307,29094,917]
+}
+
 const dataGeo = {
     labels: ['Vaccinés','Malades','Morts'],
     datasets : [{
         label: "Malade",
         backgroundColor: ['lightgreen','lightcoral','#050101'],
-        data: [5706378,16470369,105631]
+        data: stats_nat
     }]
 };
 
@@ -144,12 +180,14 @@ var chartGeo = new Chart(
     configGeo
 );
 
+
+
 function updateData(e) {
     
     var layer = e.target;
     var region = layer.feature.properties['code'];
     chartGeo.options.plugins.title.text = 'Statistiques de la Région '+layer.feature.properties['nom'];
-    //chartGeo.data.datasets[0].data = stats[region];
+    chartGeo.data.datasets[0].data = stats_per_region[region];
     chartGeo.update()
 
 

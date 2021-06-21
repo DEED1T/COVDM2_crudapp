@@ -134,17 +134,17 @@ var patients = $.ajax({
             datasets : [{
                 label: "Malade",
                 backgroundColor: 'lightcoral',
-                borderColor: 'lightcoral',
+                borderColor: 'grey',
                 data: datS
             },
             {   label:"Mort",
                 backgroundColor: '#050101',
-                borderColor: '#050101',
+                borderColor: 'grey',
                 data: datD
             },
             {   label: "Vaccinés",
                 backgroundColor: 'lightgreen',
-                borderColor: 'lightgreen',
+                borderColor: 'grey',
                 data : datV
             }
             ]
